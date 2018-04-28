@@ -1,4 +1,4 @@
-package ng.codeinn.oaunet.roomdb;
+package ng.codeinn.oaunet.data.database;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
@@ -40,5 +40,33 @@ public class Research {
         this.researchFulltext = researchFulltext;
         this.researchDateCreated = researchDateCreated;
         this.researchHits = researchHits;
+    }
+
+    public int getResearchId() {
+        return researchId;
+    }
+
+    public String getResearchTitle() {
+        return researchTitle;
+    }
+
+    public String getResearchHeader() {
+        return researchHeader;
+    }
+
+    public String getResearchLink() {
+        return researchLink;
+    }
+
+    public String getResearchFulltext() {
+        return researchFulltext;
+    }
+
+    public String getResearchDateCreated() {
+        return researchDateCreated;
+    }
+
+    public String getResearchHits() {
+        return researchHits;
     }
 }

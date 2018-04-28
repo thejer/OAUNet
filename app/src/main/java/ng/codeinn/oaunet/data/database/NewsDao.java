@@ -1,4 +1,4 @@
-package ng.codeinn.oaunet.roomdb;
+package ng.codeinn.oaunet.data.database;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;

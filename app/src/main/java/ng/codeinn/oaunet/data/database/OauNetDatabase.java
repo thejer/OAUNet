@@ -1,4 +1,4 @@
-package ng.codeinn.oaunet.roomdb;
+package ng.codeinn.oaunet.data.database;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
@@ -23,7 +23,7 @@ public abstract class OauNetDatabase extends RoomDatabase {
             synchronized (LOCK){
                 if (sInstance == null){
                     sInstance = Room.databaseBuilder(context.getApplicationContext(),
-                            OauNetDatabase.class, DATABASE_NAME).build();
+                            OauNetDatabase.class, OauNetDatabase.DATABASE_NAME).build();
                 }
             }
         }

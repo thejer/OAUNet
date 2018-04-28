@@ -1,7 +1,7 @@
 package ng.codeinn.oaunet.networkUtils;
 
-import ng.codeinn.oaunet.model.ItemsModel;
-import ng.codeinn.oaunet.model.ListWrapper;
+import ng.codeinn.oaunet.data.model.ItemsModel;
+import ng.codeinn.oaunet.data.model.ListWrapper;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

@@ -1,4 +1,4 @@
-package ng.codeinn.oaunet.roomdb;
+package ng.codeinn.oaunet.data.database;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
@@ -41,5 +41,33 @@ public class News {
         this.newsFulltext = newsFulltext;
         this.newsDateCreated = newsDateCreated;
         this.newsHits = newsHits;
+    }
+
+    public int getNewsId() {
+        return newsId;
+    }
+
+    public String getNewsTitle() {
+        return newsTitle;
+    }
+
+    public String getNewsHeader() {
+        return newsHeader;
+    }
+
+    public String getNewsLink() {
+        return newsLink;
+    }
+
+    public String getNewsFulltext() {
+        return newsFulltext;
+    }
+
+    public String getNewsDateCreated() {
+        return newsDateCreated;
+    }
+
+    public String getNewsHits() {
+        return newsHits;
     }
 }

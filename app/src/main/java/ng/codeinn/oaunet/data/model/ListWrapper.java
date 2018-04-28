@@ -1,4 +1,4 @@
-package ng.codeinn.oaunet.model;
+package ng.codeinn.oaunet.data.model;
 
 import java.util.List;
 

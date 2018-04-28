@@ -1,4 +1,4 @@
-package ng.codeinn.oaunet.roomdb;
+package ng.codeinn.oaunet.data.database;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
@@ -40,5 +40,33 @@ public class Event {
         this.eventFulltext = eventFulltext;
         this.eventDateCreated = eventDateCreated;
         this.eventHits = eventHits;
+    }
+
+    public int getEventId() {
+        return eventId;
+    }
+
+    public String getEventTitle() {
+        return eventTitle;
+    }
+
+    public String getEventHeader() {
+        return eventHeader;
+    }
+
+    public String getEventLink() {
+        return eventLink;
+    }
+
+    public String getEventFulltext() {
+        return eventFulltext;
+    }
+
+    public String getEventDateCreated() {
+        return eventDateCreated;
+    }
+
+    public String getEventHits() {
+        return eventHits;
     }
 }
