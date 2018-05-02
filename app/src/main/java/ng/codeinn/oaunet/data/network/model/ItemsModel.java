@@ -1,23 +1,21 @@
-package ng.codeinn.oaunet.data.model;
+package ng.codeinn.oaunet.data.network.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ItemModel {
-
+public class ItemsModel {
 
     @SerializedName("title")
     @Expose
     private String title;
 
-    @SerializedName("introtext")
-    @Expose
-    private String introtext;
-
     @SerializedName("link")
     @Expose
     private String link;
 
+    @SerializedName("introtext")
+    @Expose
+    private String introtext;
     @SerializedName("fulltext")
     @Expose
     private String fulltext;
@@ -34,9 +32,15 @@ public class ItemModel {
     @Expose
     private String hits;
 
+
     public String getTitle() {
         return title;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
 
     public String getLink() {
         return link;
@@ -62,6 +66,15 @@ public class ItemModel {
         this.fulltext = fulltext;
     }
 
+
+    public String getHits() {
+        return hits;
+    }
+
+    public void setHits(String hits) {
+        this.hits = hits;
+    }
+
     public String getCreated() {
         return created;
     }
@@ -79,12 +92,7 @@ public class ItemModel {
         this.modified = modified;
     }
 
-    public String getHits() {
-        return hits;
-    }
 
-    public void setHits(String hits) {
-        this.hits = hits;
-    }
+
+
 }
-
