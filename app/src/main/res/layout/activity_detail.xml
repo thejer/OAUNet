@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +8,61 @@
     tools:context=".ui.detail.DetailActivity">
 
 
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?android:attr/listPreferredItemHeight"
+        android:paddingBottom="@dimen/list_item_padding_vertical"
+        android:paddingLeft="@dimen/list_item_padding_horizontal"
+        android:paddingRight="@dimen/list_item_padding_horizontal"
+        android:paddingTop="@dimen/list_item_padding_vertical">
 
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/detail_item_title_id"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/detail_date_id"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Intro text lorem ipsum and" />
+
+
+        <TextView
+            android:id="@+id/detail_author_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/author_oau"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_item_title_id" />
+
+        <TextView
+            android:id="@+id/detail_date_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/detail_author_id"
+            tools:text="Date: " />
+
+        <TextView
+            android:id="@+id/detail_intro_text_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toStartOf="@+id/detail_item_title_id"
+            app:layout_constraintTop_toBottomOf="@+id/detail_date_id"
+            tools:text="@string/long_text" />
+
+        <TextView
+            android:id="@+id/full_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toStartOf="@+id/detail_intro_text_id"
+            app:layout_constraintTop_toBottomOf="@+id/detail_intro_text_id"
+            tools:text="@string/long_text" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

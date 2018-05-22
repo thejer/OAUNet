@@ -3,6 +3,7 @@ package ng.codeinn.oaunet.ui.list;
 
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -20,7 +21,7 @@ import ng.codeinn.oaunet.utilities.InjectorUtils;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListItemFragment extends Fragment implements ListItemClickListener {
+public class ListItemFragment extends Fragment implements ItemsListAdapter.ItemAdapterOnItemClickHandler {
 
     private RecyclerView mRecyclerView;
 
@@ -28,6 +29,8 @@ public class ListItemFragment extends Fragment implements ListItemClickListener 
     private int mPosition = RecyclerView.NO_POSITION;
 
     ItemsListAdapter mAdapter;
+
+    OnItemClickListener mCallBack;
 
     int mItemType = Constants.NEWS_ITEM;
     public ListItemFragment() {
@@ -42,6 +45,20 @@ public class ListItemFragment extends Fragment implements ListItemClickListener 
         return fragment;
     }
 
+    public interface OnItemClickListener{
+        void onItemSelected(String link);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        try {
+            mCallBack = (OnItemClickListener) context;
+        }catch (ClassCastException e){
+            throw new ClassCastException(context.toString() + "must implement OnItemClickListener");
+        }
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -100,12 +117,15 @@ public class ListItemFragment extends Fragment implements ListItemClickListener 
         });
 
 
+
+
         return rootView;
     }
 
 
-    @Override
-    public void onItemClick() {
 
+    @Override
+    public void onItemClick(String link) {
+        mCallBack.onItemSelected(link);
     }
 }

@@ -16,4 +16,12 @@
     <string name="events">Events</string>
     <string name="items">News</string>
     <string name="date_format">Date: %s</string>
+    <string name="read_more"><u>Read more</u></string>
+    <string name="oaunet">OAUNet</string>
+    <string name="oau_logo">oau logo</string>
+    <string name="links">Links</string>
+    <string name="e_portal">E-portal</string>
+    <string name="netque">NetQue</string>
+    <string name="transcript">Transcript</string>
+    <string name="departments">Departments</string>
 </resources>

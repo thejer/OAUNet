@@ -69,6 +69,12 @@ public class ItemsRepository {
         return mItemDao.getItemById(id);
     }
 
+    public LiveData<Item> getItemByLink(String link){
+        initializeData();
+
+        return mItemDao.getItemByLink(link);
+    }
+
     private void deleteOldData() {
 
     }

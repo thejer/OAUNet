@@ -4,6 +4,7 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.util.Log;
 
 import com.firebase.jobdispatcher.Constraint;
@@ -93,7 +94,7 @@ public class ItemsNetworkDataSource {
         Driver driver = new GooglePlayDriver(mContext);
         FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(driver);
 
-        Job syncSunshineJob = dispatcher.newJobBuilder()
+        Job syncItemsJob = dispatcher.newJobBuilder()
                 .setService(ItemsFirebaseJobService.class)
                 .setTag(ITEMS_SYNC_TAG)
                 .setConstraints(Constraint.ON_ANY_NETWORK)
@@ -104,13 +105,12 @@ public class ItemsNetworkDataSource {
                         SYNC_INTERVAL_SECONDS + SYNC_FLEXTIME_SECONDS))
                 .setReplaceCurrent(true)
                 .build();
-        dispatcher.schedule(syncSunshineJob);
+        dispatcher.schedule(syncItemsJob);
         Log.d(LOG_TAG, "Job scheduled");
     }
 
     void fetchItems(){
         Log.d(LOG_TAG, "Fetch items started");
-
         createItemsAPI();
         mApiInterface.getNews().enqueue(new Callback<ListWrapper>() {
             @Override

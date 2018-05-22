@@ -19,8 +19,12 @@ public interface ItemDao {
     @Query("SELECT * FROM item WHERE itemType = :type")
     LiveData<List<Item>> getItemsByType(int type);
 
-    @Query("SELECT * FROM Item WHERE itemId = :id")
+    @Query("SELECT * FROM item WHERE itemId = :id")
     LiveData<Item> getItemById(int id);
+
+    @Query("SELECT * FROM item WHERE itemLink = :link")
+    LiveData<Item> getItemByLink(String link);
+
 
     @Query("DELETE FROM Item WHERE itemId = :id")
     void deleteItemById(int id);

@@ -6,26 +6,41 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_news"
+            android:icon="@drawable/ic_news"
             android:title="@string/items" />
         <item
             android:id="@+id/nav_events"
+            android:icon="@drawable/ic_event"
             android:title="@string/events" />
         <item
             android:id="@+id/nav_researches"
+            android:icon="@drawable/ic_research"
             android:title="@string/research" />
     </group>
 
-    <!--<item android:title="Communicate">-->
-        <!--<menu>-->
-            <!--<item-->
-                <!--android:id="@+id/nav_share"-->
-                <!--android:icon="@drawable/ic_menu_share"-->
-                <!--android:title="Share" />-->
-            <!--<item-->
-                <!--android:id="@+id/nav_send"-->
-                <!--android:icon="@drawable/ic_menu_send"-->
-                <!--android:title="Send" />-->
-        <!--</menu>-->
-    <!--</item>-->
+    <item android:title="@string/links"
+        android:id="@+id/links"
+        >
+        <menu>
+            <item
+                android:id="@+id/link_departments"
+                android:icon="@drawable/ic_department"
+                android:title="@string/departments"
+                />
+            <item
+                android:id="@+id/link_e_portal"
+                android:icon="@drawable/ic_user"
+                android:title="@string/e_portal" />
+            <item
+                android:id="@+id/link_netque"
+                android:icon="@drawable/ic_login"
+                android:title="@string/netque" />
+            <item
+                android:id="@+id/link_transcript"
+                android:icon="@drawable/ic_transcript"
+                android:title="@string/transcript"
+                />
+        </menu>
+    </item>
 
 </menu>

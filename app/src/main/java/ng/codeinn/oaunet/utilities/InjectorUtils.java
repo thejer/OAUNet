@@ -22,6 +22,7 @@ import ng.codeinn.oaunet.AppExecutors;
 import ng.codeinn.oaunet.data.ItemsRepository;
 import ng.codeinn.oaunet.data.database.ItemsDatabase;
 import ng.codeinn.oaunet.data.network.ItemsNetworkDataSource;
+import ng.codeinn.oaunet.ui.detail.DetailViewModelFactory;
 import ng.codeinn.oaunet.ui.list.MainViewModelFactory;
 
 /**
@@ -42,11 +43,11 @@ public class InjectorUtils {
         return ItemsNetworkDataSource.getInstance(context.getApplicationContext(), executors);
     }
 
-//    public static DetailViewModelFactory provideDetailViewModelFactory(Context context, Date date) {
-//        SunshineRepository repository = provideRepository(context.getApplicationContext());
-//        return new DetailViewModelFactory(repository, date);
-//    }
-//
+    public static DetailViewModelFactory provideDetailViewModelFactory(Context context, String link) {
+        ItemsRepository repository = provideRepository(context.getApplicationContext());
+        return new DetailViewModelFactory(repository, link);
+    }
+
     public static MainViewModelFactory provideMainActivityViewModelFactory(Context context, int itemType) {
         ItemsRepository repository = provideRepository(context.getApplicationContext());
         return new MainViewModelFactory(repository, itemType);

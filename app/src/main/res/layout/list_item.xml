@@ -27,26 +27,21 @@
             android:id="@+id/item_title_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Item Title" />
 
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
 
         <TextView
             android:id="@+id/intro_text_id"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/item_title_id"
-            app:layout_constraintTop_toTopOf="@+id/guideline"
-            tools:ellipsize="end"
+            android:layout_height="54dp"
+            android:layout_marginTop="8dp"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+            app:layout_constraintStart_toStartOf="@+id/item_title_id"
+            app:layout_constraintTop_toBottomOf="@+id/item_title_id"
+            tools:ellipsize="end"
             tools:maxLines="3"
             tools:text="@string/long_text" />
 
@@ -54,17 +49,29 @@
             android:id="@+id/author_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
             android:text="@string/author_oau"
-            app:layout_constraintBottom_toTopOf="@+id/item_title_id"
-            app:layout_constraintStart_toStartOf="@+id/item_title_id" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
             android:id="@+id/date_id"
             android:layout_width="wrap_content"
+            android:layout_marginTop="6dp"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/author_id"
+            app:layout_constraintStart_toStartOf="@+id/intro_text_id"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:text="Date: " />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/read_more"
+            android:layout_marginTop="6dp"
+            android:textColor="#0f24da"
+            app:layout_constraintStart_toStartOf="@+id/intro_text_id"
+            app:layout_constraintTop_toBottomOf="@+id/intro_text_id" />
 
     </android.support.constraint.ConstraintLayout>
 
